@@ -11,6 +11,5 @@ inputs = {
   cidr               = "192.168.0.0/16"
   azs                = ["ap-northeast-2a", "ap-northeast-2b"]
   subnet_count       = 4
-  enable_nat_gateway = false
-  single_nat_gateway = false
+  enable_nat_gateway = true
 }
