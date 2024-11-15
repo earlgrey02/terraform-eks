@@ -24,15 +24,18 @@ inputs = {
       resolve_conflicts = "OVERWRITE"
     }
     kube-proxy = {}
+    vpc-cni = {
+      resolve_conflicts = "OVERWRITE"
+    }
   }
   vpc_id     = dependency.vpc.outputs.vpc_id
   subnet_ids = dependency.vpc.outputs.private_subnets
   managed_node_groups = {
     node-group-1 = {
       name           = "node-group-1"
-      desired_size   = 1
-      min_size       = 1
-      max_size       = 1
+      desired_size   = 2
+      min_size       = 2
+      max_size       = 2
       instance_types = ["t2.medium"]
       subnets        = [dependency.vpc.outputs.private_subnets[0]]
     }
